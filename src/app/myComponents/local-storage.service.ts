@@ -31,6 +31,7 @@ export class LocalStorageService{
         }
         else
         {
+            
             for(var i=0;i<this.users.length;i++)
             {
                 if(this.users[i].mail==user.mail){
@@ -39,7 +40,6 @@ export class LocalStorageService{
                 }
                 else 
                 this.isExist=false;
-                debugger;
 
             }
         if(this.isExist==true)
@@ -48,9 +48,6 @@ export class LocalStorageService{
         }
         else
         {
-            
-          
-             
             
             if(this.password==false)
             alert("Пароли не совпадают");
