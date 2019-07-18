@@ -19,7 +19,11 @@ export class LocalStorageService{
         {
             this.empty=false;
         }
-        if(this.empty==true)
+        if(user.password==user.repeatPassword)
+            this.password=true;
+            else 
+            this.password=false;
+        if(this.empty==true && this.password==true)
         {
             this.users.push(user);
             localStorage.setItem("users",JSON.stringify(this.users));
@@ -45,10 +49,7 @@ export class LocalStorageService{
         else
         {
             
-            if(user.password==user.repeatPassword)
-            this.password=true;
-            else 
-            this.password=false;
+          
              
             
             if(this.password==false)
