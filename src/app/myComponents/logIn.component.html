@@ -1,0 +1,17 @@
+<form [formGroup]="logInForm" class="logInForm">
+    <label name="mail">Почта</label>
+    <input formControlName="logInMail" id="name" type='text' required minlength="3" class="form-control"/>
+    <div *ngIf="logInForm.controls['logInMail'].invalid && 
+    (logInForm.controls['logInMail'].dirty || logInForm.controls['logInMail'].touched)">
+    <div *ngIf="logInForm.controls['logInMail'].errors.required">E-mail обязателен</div>
+    <div *ngIf="logInForm.controls['logInMail'].errors.minlength">Минимальная длинна-3</div>
+    </div>
+    <label name='password'>Пароль</label>
+    <input formControlName="logInPassword" type="password" required minlength="3"/>
+    <div *ngIf="logInForm.controls['logInPassword'].invalid && 
+    (logInForm.controls['logInPassword'].dirty || logInForm.controls['logInPassword'].touched)">
+    <div *ngIf="logInForm.controls['logInPassword'].errors.required">Пароль обязателен</div>
+    <div *ngIf="logInForm.controls['logInPassword'].errors.minlength">Минимальная длинна-3</div>
+</div>
+    <button (click)="submit()" class="b1">Вход</button>
+</form>

@@ -1,0 +1,11 @@
+<form [formGroup]="registForm" class="registForm">
+    <label name="firstName"> Имя</label>
+    <input formControlName="name" type="text" required minlength="3"/>
+    <label name="mail">Почта</label>
+    <input formControlName="mail" type="text" required minlength="3"/>
+    <label name='password'>Пароль</label>
+    <input formControlName="password" type="password" required minlength="3"/>
+    <label name="repeatPassword">Повторите пароль</label>
+    <input formControlName="repeatPassword" type="password" required minlength="3"/>
+    <button (click)="submit()" class="b1">Регистрация</button>
+</form>
